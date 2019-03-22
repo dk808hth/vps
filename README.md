@@ -56,15 +56,15 @@ Comparing with building from source manually, you will benefit from using this s
 SSH to your VPS and clone the Github repository:
 
 ```bash
-git clone https://github.com/masternodes/vps.git && cd vps
+git clone https://github.com/dk808hth/vps.git && cd vps
 ```
 
 Install & configure your desired master node with options:
 
 ```bash
-./install.sh -p pivx
+./install.sh -p genesis -c 6 -n 6 -r “tags/v3.0.0” -s
 ```
-
+*Above example is to install 6 nodes using ipv6 w/sentinel. Change -c 6 to the number of nodes you want to install.
 ## Examples for typical script invocation
 
 These are only a couple of examples for typical setups. Check my [easy step-by-step guide for [vultr](/docs/masternode_vps.md) that will guide you through the hardest parts.
