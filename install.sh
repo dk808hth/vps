@@ -120,6 +120,7 @@ function install_packages() {
     libcurl4-gnutls-dev protobuf-compiler libboost-all-dev autotools-dev automake \
     libboost-all-dev libssl-dev make autoconf libtool git apt-utils g++ \
     libprotobuf-dev pkg-config libudev-dev libqrencode-dev bsdmainutils \
+    nano python-virtualenv python3 libsodium-dev curl software-properties-common \
     pkg-config libgmp3-dev libevent-dev jp2a pv virtualenv libdb4.8-dev libdb4.8++-dev  &>> ${SCRIPT_LOGFILE}
     
     # only for 18.04 // openssl
@@ -193,7 +194,7 @@ function create_sentinel_setup() {
 	# if code directory does not exists, we create it clone the src
 	if [ ! -d ${SENTINEL_BASE} ]; then
 		cd /usr/share                                               &>> ${SCRIPT_LOGFILE}
-		git clone https://github.com/dashpay/sentinel.git sentinel  &>> ${SCRIPT_LOGFILE}
+		git clone https://github.com/genesisofficial/sentinel.git   &>> ${SCRIPT_LOGFILE}
 		cd sentinel                                                 &>> ${SCRIPT_LOGFILE}
 		rm -f rm sentinel.conf                                      &>> ${SCRIPT_LOGFILE}
 	else
