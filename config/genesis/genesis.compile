@@ -1,6 +1,10 @@
 #!/bin/bash    
-
+# this file contains all commands to compile and install the daemon
+apt-get install nano python-virtualenv virtualenv build-essential libtool autotools-dev automake pkg-config libssl-dev libevent-dev bsdmainutils python3 libsodium-dev git curl software-properties-common libboost-all-dev -y
+chmod u+x share/genbuild.sh
+chmod u+x src/leveldb/build_detect_platform
+chmod u+x ./autogen.sh
 ./autogen.sh
-./configure --disable-dependency-tracking --enable-tests=no --without-gui
+./configure --disable-dependency-tracking --enable-tests=no --without-gui --without-miniupnpc 
 make
 make install
